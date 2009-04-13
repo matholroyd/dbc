@@ -1,6 +1,21 @@
 = dbc
 
-Description goes here.
+Design By Contract implemented for Ruby.  
+
+== Philosophy
+
+DBC, among other things, is a staple of the design concept, "Fail early, fail hard."  That is, it is better to catch problems earlier on rather than later.  DBC does this by specifying input/output requirements of code, typically functions.  When these constraints are broken, the DBC library causes a hard-fail of the system.
+
+A classic example of DBC in actions would be to checking the divisor in a division is non-zero. This would be written as 
+
+  def division(a, b)
+    DBC.require(b != 0, "Divisor must be non-zero")  
+    
+    a / b
+  end
+ 
+
+See http://en.wikipedia.org/wiki/Design_by_contract for more details.
 
 == Copyright
 
